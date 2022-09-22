@@ -22,6 +22,10 @@ app.use(express.json());
 // Hellow Route
 app.use('/', hellowRoute);
 
+app.use('*', (req, res) => {
+	res.status(404).send(`<h1>${req.baseUrl} is not a route!</h1>`);
+});
+
 app.listen(Port, () => {
 	console.log(`Tour Management System server is running: ${Port}`.red.bold);
 });
