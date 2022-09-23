@@ -14,6 +14,7 @@ mongoose
 
 // import route
 const hellowRoute = require('./Route/v1/hellow.route');
+const tourRoute = require('./Route/v1/tour.route');
 
 // add meddileware
 app.use(cors());
@@ -21,6 +22,7 @@ app.use(express.json());
 
 // Hellow Route
 app.use('/', hellowRoute);
+app.use('/api/v1/tours', tourRoute);
 
 app.use('*', (req, res) => {
 	res.status(404).send(`<h1>${req.baseUrl} is not a route!</h1>`);

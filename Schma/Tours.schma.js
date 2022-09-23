@@ -15,8 +15,20 @@ const tour = new mongoose.Schema(
 			require: true,
 			trim: true,
 		},
+		country: {
+			type: String,
+			require: true,
+		},
+		image: {
+			type: String,
+			require: true,
+		},
+		viewCount: {
+			type: Number,
+			default: 0,
+		},
 		description: {
-			type: string,
+			type: String,
 			require: true,
 		},
 		price: {
@@ -30,4 +42,4 @@ const tour = new mongoose.Schema(
 	}
 );
 
-module.exports.tourSchma = mongoose.model('Tour', tour);
+module.exports.TourSchma = mongoose.model('Tour', tour);
